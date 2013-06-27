@@ -1,6 +1,7 @@
 // v0.8
 #include"LCD.h"
 #include<plib.h>
+#include<string.h>
 
 int main()
 {
