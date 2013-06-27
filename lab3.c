@@ -96,6 +96,41 @@ void LCD_puts(const uchar *s) {
 	}
 	RS=0;
 }*/
+
+/* void LCD_puts(const uchar *s)
+{
+	int i=0;
+	if (strlen(s)<=16)
+	{
+		while (s[i]!='\0')
+		{
+			LCD_putchar(s[i]);
+			DelayUsec(40);
+			i++;
+		}
+		RS=0;
+	}
+	else
+	{
+		for (i;i<=16;i++)
+		{
+			LCD_putchar(s[i]);
+			DelayUsec(40);
+		}
+		LCD_goto(0x40);
+		while (s[i]!='\0')
+		{
+			LCD_putchar(s[i]);
+			DelayUsec(40);
+			i++;
+		}
+		RS=0;
+	}
+}
+	
+	
+	
+	
 /* go to a specific DDRAM address addr */
 void LCD_goto(uchar addr) {
 	LCD_putchar(addr|0x80);
